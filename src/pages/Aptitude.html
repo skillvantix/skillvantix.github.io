@@ -3,9 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aptitude Training Program | SKILL VANTIX</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-    <meta name="description" content="Master quantitative, logical, and verbal skills with our expert-led Aptitude Training Program. Prepare to ace placement tests and secure your dream job.">
+    <!-- Primary SEO Meta Tags -->
+    <title>Aptitude Training Program | SKILL VANTIX - Master Quantitative, Logical & Verbal Skills</title>
+    <meta name="title" content="Aptitude Training Program | SKILL VANTIX - Master Quantitative, Logical & Verbal Skills">
+    <meta name="description" content="Master quantitative, logical, and verbal skills with our expert-led Aptitude Training Program at SKILL VANTIX. 6-week intensive course to ace placement tests and secure your dream job in Namakkal, Tamil Nadu.">
+    <meta name="keywords" content="aptitude training, quantitative aptitude, logical reasoning, verbal ability, placement preparation, SKILL VANTIX, Namakkal training, aptitude test coaching, competitive exam preparation, job placement training">
+    <meta name="author" content="SKILL VANTIX">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.skillvantix.com/pages/Aptitude.html">
+    <meta property="og:title" content="Aptitude Training Program | SKILL VANTIX">
+    <meta property="og:description" content="Master quantitative, logical, and verbal skills with our expert-led 6-week Aptitude Training Program. Ace placement tests and secure your dream job.">
+    <meta property="og:image" content="https://www.skillvantix.com/src/Image/Aptitude1.avif">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aptitude Training Program | SKILL VANTIX">
+    <meta name="twitter:description" content="Master quantitative, logical, and verbal skills with our 6-week Aptitude Training Program.">
+    <meta name="twitter:image" content="https://www.skillvantix.com/src/Image/Aptitude1.avif">
+    
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
 
     <!-- Fonts -->
@@ -20,180 +40,6 @@
     <link rel="stylesheet" href="../css/Aptitude.css">
 </head>
 <body>
-    <script>
-        /* ========================================
-   APTITUDE TRAINING PAGE - JAVASCRIPT
-   Scroll Animations & Interactions
-======================================== */
-
-(function() {
-    'use strict';
-
-    // ========================================
-    // Navigation Toggle
-    // ========================================
-    const navToggle = document.getElementById('navToggle');
-    const navMenu = document.getElementById('navMenu');
-
-    if (navToggle && navMenu) {
-        navToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            navToggle.classList.toggle('active');
-        });
-
-        // Close menu when clicking on a link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                navToggle.classList.remove('active');
-            });
-        });
-    }
-
-    // ========================================
-    // Navbar Scroll Effect
-    // ========================================
-    window.addEventListener('scroll', () => {
-        const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-
-    // ========================================
-    // Smooth Scrolling
-    // ========================================
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    // ========================================
-    // Scroll Animations
-    // ========================================
-    const config = {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px',
-        animateOnce: true
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animated');
-                
-                if (config.animateOnce) {
-                    observer.unobserve(entry.target);
-                }
-            } else if (!config.animateOnce) {
-                entry.target.classList.remove('animated');
-            }
-        });
-    }, {
-        threshold: config.threshold,
-        rootMargin: config.rootMargin
-    });
-
-    function observeElements(selector) {
-        const elements = document.querySelectorAll(selector);
-        elements.forEach(element => {
-            observer.observe(element);
-        });
-    }
-
-    function initScrollAnimations() {
-        // Observe all animated sections
-        observeElements('.section-header');
-        observeElements('.overview-content');
-        observeElements('.overview-text');
-        observeElements('.curriculum-grid');
-        observeElements('.cta-card');
-
-        console.log('✨ Aptitude page animations initialized');
-    }
-
-    // Initialize animations when DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initScrollAnimations);
-    } else {
-        initScrollAnimations();
-    }
-
-    // ========================================
-    // Newsletter Form
-    // ========================================
-    const newsletterForm = document.getElementById('newsletterForm');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const email = newsletterForm.querySelector('input[type="email"]').value;
-            
-            alert('Thank you for subscribing! We\'ll keep you updated on our Aptitude Training Program.');
-            newsletterForm.reset();
-        });
-    }
-
-    // ========================================
-    // Feature Items Progressive Animation
-    // ========================================
-    const featureObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const featureItems = entry.target.querySelectorAll('.feature-item');
-                featureItems.forEach((item, index) => {
-                    setTimeout(() => {
-                        item.style.opacity = '1';
-                        item.style.transform = 'translateX(0)';
-                    }, index * 150);
-                });
-                featureObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.3 });
-
-    const overviewText = document.querySelector('.overview-text');
-    if (overviewText) {
-        featureObserver.observe(overviewText);
-    }
-
-    // ========================================
-    // Curriculum Cards Hover Effect Enhancement
-    // ========================================
-    const curriculumCards = document.querySelectorAll('.curriculum-card');
-    curriculumCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.02)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(-10px)';
-        });
-    });
-
-    // ========================================
-    // Add Parallax Effect to Hero
-    // ========================================
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const heroSection = document.querySelector('.hero-section');
-        
-        if (heroSection && scrolled < heroSection.offsetHeight) {
-            heroSection.style.backgroundPositionY = scrolled * 0.5 + 'px';
-        }
-    });
-
-})();
-    </script>
 
     <!-- Navigation -->
     <nav class="navbar">
@@ -408,7 +254,180 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="aptitude.js"></script>
+    <script>
+/* ========================================
+   APTITUDE TRAINING PAGE - JAVASCRIPT
+   Scroll Animations & Interactions
+======================================== */
+
+(function() {
+    'use strict';
+
+    // ========================================
+    // Navigation Toggle
+    // ========================================
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+            });
+        });
+    }
+
+    // ========================================
+    // Navbar Scroll Effect
+    // ========================================
+    window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // ========================================
+    // Smooth Scrolling
+    // ========================================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // ========================================
+    // Scroll Animations
+    // ========================================
+    const config = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px',
+        animateOnce: true
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animated');
+                
+                if (config.animateOnce) {
+                    observer.unobserve(entry.target);
+                }
+            } else if (!config.animateOnce) {
+                entry.target.classList.remove('animated');
+            }
+        });
+    }, {
+        threshold: config.threshold,
+        rootMargin: config.rootMargin
+    });
+
+    function observeElements(selector) {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach(element => {
+            observer.observe(element);
+        });
+    }
+
+    function initScrollAnimations() {
+        // Observe all animated sections
+        observeElements('.section-header');
+        observeElements('.overview-content');
+        observeElements('.overview-text');
+        observeElements('.curriculum-grid');
+        observeElements('.cta-card');
+
+        console.log('✨ Aptitude page animations initialized');
+    }
+
+    // Initialize animations when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initScrollAnimations);
+    } else {
+        initScrollAnimations();
+    }
+
+    // ========================================
+    // Newsletter Form
+    // ========================================
+    const newsletterForm = document.getElementById('newsletterForm');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = newsletterForm.querySelector('input[type="email"]').value;
+            
+            alert('Thank you for subscribing! We\'ll keep you updated on our Aptitude Training Program.');
+            newsletterForm.reset();
+        });
+    }
+
+    // ========================================
+    // Feature Items Progressive Animation
+    // ========================================
+    const featureObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const featureItems = entry.target.querySelectorAll('.feature-item');
+                featureItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateX(0)';
+                    }, index * 150);
+                });
+                featureObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    const overviewText = document.querySelector('.overview-text');
+    if (overviewText) {
+        featureObserver.observe(overviewText);
+    }
+
+    // ========================================
+    // Curriculum Cards Hover Effect Enhancement
+    // ========================================
+    const curriculumCards = document.querySelectorAll('.curriculum-card');
+    curriculumCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(-10px)';
+        });
+    });
+
+    // ========================================
+    // Add Parallax Effect to Hero
+    // ========================================
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const heroSection = document.querySelector('.hero-section');
+        
+        if (heroSection && scrolled < heroSection.offsetHeight) {
+            heroSection.style.backgroundPositionY = scrolled * 0.5 + 'px';
+        }
+    });
+
+})();
+    </script>
 
 </body>
 </html>

@@ -1,6 +1,7 @@
 /* ========================================
    DATA ANALYTICS COURSE PAGE - CSS
    Bootstrap-Free with Animations
+   ENHANCED MOBILE RESPONSIVE VERSION
 ======================================== */
 
 /* ========================================
@@ -21,7 +22,7 @@
 }
 
 /* ========================================
-   Reset & Base Styles
+   Reset & Base Styles - MOBILE FIRST
 ======================================== */
 * {
     margin: 0;
@@ -31,6 +32,9 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
 }
 
 body {
@@ -40,6 +44,9 @@ body {
     color: var(--text-color);
     background-color: var(--white);
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    position: relative;
 }
 
 img {
@@ -87,6 +94,8 @@ p {
 
 .section {
     padding: 100px 0;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 .section-light {
@@ -190,16 +199,16 @@ p {
 }
 
 /* ========================================
-   Navigation
+   Navigation - FIXED FOR MOBILE
 ======================================== */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    width: 100%;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    /* padding: 20px 0; */
     z-index: 1000;
     transition: var(--transition);
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
@@ -214,6 +223,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .navbar-brand {
@@ -223,13 +233,13 @@ p {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
+    z-index: 1001;
 }
 
 .navbar-brand img {
-        width: 150px;
+    width: 150px;
     height: 80px;
     object-fit: contain;
-
 }
 
 .nav-menu {
@@ -273,6 +283,7 @@ p {
     border: none;
     cursor: pointer;
     z-index: 1001;
+    padding: 5px;
 }
 
 .nav-toggle span {
@@ -299,11 +310,12 @@ p {
    Hero Section
 ======================================== */
 .hero-section {
-     position: relative;
+    position: relative;
     color: var(--white);
     padding: 180px 0 100px;
     margin-top: 0px;
     overflow: hidden;
+    width: 100%;
     background: 
         linear-gradient(135deg, rgba(10, 37, 64, 0.85) 0%, rgba(13, 58, 92, 0.9) 100%),
         url('../Image/data1.jpg') center center;
@@ -337,6 +349,7 @@ p {
     text-align: center;
     opacity: 0;
     animation: fadeUp 1s ease forwards 0.2s;
+    width: 100%;
 }
 
 .hero-subtitle {
@@ -423,6 +436,7 @@ p {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
+    width: 100%;
 }
 
 .mastery-card {
@@ -487,6 +501,7 @@ p {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 30px;
     text-align: center;
+    width: 100%;
 }
 
 .tech-item {
@@ -537,6 +552,7 @@ p {
 .curriculum-wrapper {
     max-width: 900px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .accordion {
@@ -635,6 +651,7 @@ p {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 35px;
+    width: 100%;
 }
 
 .project-card {
@@ -781,6 +798,8 @@ p {
     background: var(--dark-color);
     color: var(--white);
     padding: 60px 0 20px;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .footer-content {
@@ -788,6 +807,7 @@ p {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
     margin-bottom: 40px;
+    width: 100%;
 }
 
 .footer-section h5 {
@@ -819,6 +839,7 @@ p {
     display: flex;
     gap: 15px;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .social-links a {
@@ -842,6 +863,7 @@ p {
     display: flex;
     gap: 10px;
     margin-top: 15px;
+    width: 100%;
 }
 
 .newsletter-form input {
@@ -850,6 +872,7 @@ p {
     border: none;
     border-radius: var(--border-radius);
     font-family: inherit;
+    min-width: 0;
 }
 
 .newsletter-form button {
@@ -860,6 +883,7 @@ p {
     border-radius: var(--border-radius);
     cursor: pointer;
     transition: var(--transition);
+    flex-shrink: 0;
 }
 
 .newsletter-form button:hover {
@@ -930,11 +954,15 @@ p {
 }
 
 /* ========================================
-   Responsive Design
+   RESPONSIVE DESIGN - MOBILE FIRST
 ======================================== */
 
 /* Tablet (768px - 991px) */
 @media (max-width: 991px) {
+    .container {
+        padding: 0 20px;
+    }
+    
     .nav-toggle {
         display: flex;
     }
@@ -951,7 +979,7 @@ p {
         align-items: flex-start;
         padding: 30px;
         box-shadow: var(--box-shadow-lg);
-        transition: var(--transition);
+        transition: right 0.3s ease-in-out;
         overflow-y: auto;
         z-index: 999;
     }
@@ -968,6 +996,7 @@ p {
     .nav-link {
         display: block;
         padding: 10px 0;
+        width: 100%;
     }
     
     .nav-item .btn {
@@ -976,8 +1005,14 @@ p {
         margin-top: 10px;
     }
 
+    .navbar-brand img {
+        width: 130px;
+        height: 70px;
+    }
+
     .hero-section {
         padding: 140px 0 80px;
+        background-attachment: scroll;
     }
 
     .hero-title {
@@ -1029,8 +1064,26 @@ p {
 
 /* Mobile (max-width: 767px) */
 @media (max-width: 767px) {
+    * {
+        max-width: 100%;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+    
+    .navbar-brand img {
+        width: 120px;
+        height: 60px;
+    }
+    
     .hero-section {
         padding: 120px 0 60px;
+        background-attachment: scroll;
     }
 
     .hero-title {
@@ -1040,9 +1093,13 @@ p {
     .hero-description {
         font-size: 1rem;
     }
-
-    .section {
-        padding: 60px 0;
+    
+    .hero-facts {
+        gap: 15px;
+    }
+    
+    .fact-item {
+        width: 100%;
     }
 
     .section-title {
@@ -1100,10 +1157,32 @@ p {
     .cta-content p {
         font-size: 1rem;
     }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .newsletter-form {
+        flex-direction: row;
+    }
 }
 
 /* Mobile Small (max-width: 480px) */
 @media (max-width: 480px) {
+    .container {
+        padding: 0 12px;
+    }
+    
+    .navbar-brand img {
+        width: 100px;
+        height: 50px;
+    }
+    
+    .hero-section {
+        padding: 100px 0 50px;
+    }
+    
     .hero-title {
         font-size: 1.85rem;
     }
@@ -1168,6 +1247,15 @@ p {
 
     .cta-content h2 {
         font-size: 1.5rem;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+    }
+    
+    .newsletter-form input,
+    .newsletter-form button {
+        width: 100%;
     }
 }
 

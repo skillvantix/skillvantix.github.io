@@ -1,6 +1,7 @@
 /* ========================================
    SKILL VANTIX - Custom Stylesheet
    Pure CSS - No Bootstrap Dependencies
+   MOBILE RESPONSIVE FIX - No Horizontal Scroll
 ======================================== */
 
 /* ========================================
@@ -20,7 +21,7 @@
 }
 
 /* ========================================
-   Reset & Base Styles
+   Reset & Base Styles - FIXED FOR MOBILE
 ======================================== */
 * {
     margin: 0;
@@ -30,6 +31,9 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
 }
 
 body {
@@ -39,6 +43,11 @@ body {
     color: var(--text-color);
     background-color: var(--white);
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+    position: relative;
 }
 
 img {
@@ -76,7 +85,7 @@ p {
 }
 
 /* ========================================
-   Container & Layout
+   Container & Layout - FIXED FOR MOBILE
 ======================================== */
 .container {
     width: 100%;
@@ -87,6 +96,8 @@ p {
 
 .section {
     padding: 80px 0;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 .section-light {
@@ -191,15 +202,15 @@ p {
 }
 
 /* ========================================
-   Navigation
+   Navigation - FIXED FOR MOBILE
 ======================================== */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    width: 100%;
     background: var(--white);
-    /* padding: 20px 0; */
     z-index: 1000;
     transition: var(--transition);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -214,6 +225,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .navbar-brand {
@@ -293,7 +305,7 @@ p {
 
 
 /* ========================================
-   Hero Section - WITH RESPONSIVE BACKGROUND IMAGE
+   Hero Section - FIXED FOR MOBILE
 ======================================== */
 .hero-section {
     position: relative;
@@ -301,6 +313,7 @@ p {
     padding: 180px 0 100px;
     margin-top: 10px;
     overflow: hidden;
+    width: 100%;
     
     /* Background image with gradient overlay */
     background: 
@@ -317,6 +330,7 @@ p {
     max-width: 1100px;
     margin: 0 auto;
     text-align: center;
+    width: 100%;
 }
 
 .hero-subtitle {
@@ -402,6 +416,8 @@ p {
     background: var(--white);
     padding: 10px 0;
     box-shadow: var(--box-shadow);
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .stats-grid {
@@ -409,6 +425,7 @@ p {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 40px;
     text-align: center;
+    width: 100%;
 }
 
 .stat-item {
@@ -429,12 +446,13 @@ p {
 }
 
 /* ========================================
-   Features Grid
+   Features Grid - FIXED FOR MOBILE
 ======================================== */
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
+    width: 100%;
 }
 
 .feature-card {
@@ -477,7 +495,7 @@ p {
 }
 
 /* ========================================
-   Course Cards
+   Course Cards - FIXED FOR MOBILE
 ======================================== */
 
 /* Programs Grid (Placement Training) - No Scroll */
@@ -485,12 +503,14 @@ p {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    width: 100%;
 }
 
 /* Courses Grid (Technology Courses) - With Scroll */
 .courses-container {
     position: relative;
     overflow: hidden;
+    width: 100%;
 }
 
 .courses-scroll-wrapper {
@@ -500,6 +520,7 @@ p {
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE/Edge */
     -webkit-overflow-scrolling: touch;
+    width: 100%;
 }
 
 .courses-scroll-wrapper::-webkit-scrollbar {
@@ -673,6 +694,7 @@ p {
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: center;
+    width: 100%;
 }
 
 .about-image {
@@ -680,6 +702,7 @@ p {
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--box-shadow-lg);
+    width: 100%;
 }
 
 .about-image img {
@@ -710,9 +733,10 @@ p {
 ======================================== */
 .tech-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 40px;
     text-align: center;
+    width: 100%;
 }
 
 .tech-item {
@@ -747,6 +771,7 @@ p {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     gap: 60px;
+    width: 100%;
 }
 
 .contact-form-wrapper {
@@ -754,6 +779,7 @@ p {
     padding: 40px;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
+    width: 100%;
 }
 
 .contact-form-wrapper h4 {
@@ -800,6 +826,7 @@ p {
     padding: 40px;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
+    width: 100%;
 }
 
 .contact-info h4 {
@@ -819,6 +846,7 @@ p {
     font-size: 1.5rem;
     width: 40px;
     text-align: center;
+    flex-shrink: 0;
 }
 
 .info-item h5 {
@@ -841,13 +869,16 @@ p {
     background: var(--dark-color);
     color: var(--white);
     padding: 60px 0 20px;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 40px;
     margin-bottom: 40px;
+    width: 100%;
 }
 
 .footer-section h5 {
@@ -879,6 +910,7 @@ p {
     display: flex;
     gap: 15px;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .social-links a {
@@ -902,6 +934,7 @@ p {
     display: flex;
     gap: 10px;
     margin-top: 15px;
+    width: 100%;
 }
 
 .newsletter-form input {
@@ -910,6 +943,7 @@ p {
     border: none;
     border-radius: var(--border-radius);
     font-family: inherit;
+    min-width: 0;
 }
 
 .newsletter-form button {
@@ -920,6 +954,7 @@ p {
     border-radius: var(--border-radius);
     cursor: pointer;
     transition: var(--transition);
+    flex-shrink: 0;
 }
 
 .newsletter-form button:hover {
@@ -934,7 +969,7 @@ p {
 }
 
 /* ========================================
-   SCROLL ANIMATIONS - ADDED SECTION
+   SCROLL ANIMATIONS
 ======================================== */
 
 /* Section header animations */
@@ -1086,71 +1121,14 @@ p {
 }
 
 /* ========================================
-   Responsive Design
+   MOBILE RESPONSIVE FIX - NO HORIZONTAL SCROLL
 ======================================== */
-
-/* Large Desktop (1400px and up) */
-@media (min-width: 1400px) {
-    .container {
-        max-width: 1320px;
-    }
-}
-
-/* Desktop (1200px - 1399px) */
-@media (min-width: 1200px) and (max-width: 1399px) {
-    .container {
-        max-width: 1140px;
-    }
-}
-
-/* Large Tablet / Small Desktop (992px - 1199px) */
-@media (max-width: 1199px) {
-    .container {
-        max-width: 960px;
-    }
-    
-    .hero-section {
-        background-attachment: scroll;
-    }
-    
-    .hero-title {
-        font-size: 3rem;
-    }
-    
-    .features-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .programs-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
-    }
-    
-    .courses-grid .course-card {
-        flex: 0 0 calc((100% - 30px) / 2);
-        width: calc((100vw - 120px) / 2);
-        max-width: 450px;
-    }
-    
-    .scroll-btn {
-        width: 45px;
-        height: 45px;
-        font-size: 1.1rem;
-    }
-    
-    .scroll-left {
-        left: -20px;
-    }
-    
-    .scroll-right {
-        right: -20px;
-    }
-}
 
 /* Tablet (768px - 991px) */
 @media (max-width: 991px) {
     .container {
-        max-width: 720px;
+        max-width: 100%;
+        padding: 0 20px;
     }
     
     .nav-toggle {
@@ -1161,13 +1139,13 @@ p {
         position: fixed;
         top: 80px;
         right: -100%;
-        width: 100%;
-        max-width: 320px;
+        width: 280px;
+        max-width: 80vw;
         height: calc(100vh - 80px);
         background: var(--white);
         flex-direction: column;
         align-items: flex-start;
-        padding: 30px;
+        padding: 30px 20px;
         box-shadow: var(--box-shadow-lg);
         transition: var(--transition);
         overflow-y: auto;
@@ -1217,22 +1195,22 @@ p {
     
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
+        gap: 25px;
     }
     
     .features-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
     
     .programs-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
     
     .courses-grid .course-card {
-        flex: 0 0 calc((100% - 25px) / 2);
-        width: calc((100vw - 100px) / 2);
+        flex: 0 0 calc(100% - 20px);
+        width: calc(100vw - 80px);
         max-width: 400px;
     }
     
@@ -1243,11 +1221,11 @@ p {
     }
     
     .scroll-left {
-        left: -15px;
+        left: 0px;
     }
     
     .scroll-right {
-        right: -15px;
+        right: 0px;
     }
     
     .about-content {
@@ -1255,69 +1233,92 @@ p {
         gap: 40px;
     }
     
-    .about-image {
-        max-height: 400px;
-    }
-    
     .contact-content {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px;
     }
     
     .tech-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
+        gap: 20px;
     }
     
     .footer-content {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
         gap: 30px;
     }
 }
 
-/* Mobile Large (576px - 767px) */
+/* Mobile (max-width: 767px) - CRITICAL FIX */
 @media (max-width: 767px) {
+    * {
+        max-width: 100%;
+    }
+    
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+        position: relative;
+    }
+    
     .container {
-        max-width: 540px;
-        padding: 0 20px;
+        max-width: 100%;
+        padding: 0 15px;
+        margin: 0 auto;
+        width: 100%;
+    }
+    
+    .section {
+        padding: 40px 0;
+        overflow-x: hidden;
+        width: 100%;
     }
     
     .navbar {
-        padding: 15px 0;
+        padding: 10px 0;
+        width: 100%;
     }
     
-    .navbar-brand {
-        font-size: 1.3rem;
+    .navbar .container {
+        padding: 0 15px;
     }
     
     .navbar-brand img {
-        width: 35px;
-        height: 35px;
+        width: 120px;
+        height: 60px;
     }
     
     .hero-section {
         padding: 120px 0 60px;
         background-attachment: scroll;
-        background-position: center center;
+        background-position: center;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .hero-content {
+        padding: 0 15px;
+        width: 100%;
     }
     
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
         line-height: 1.3;
     }
     
     .hero-subtitle {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
     
     .hero-description {
-        font-size: 1rem;
-        line-height: 1.6;
+        font-size: 0.95rem;
     }
     
     .hero-buttons {
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
         width: 100%;
     }
     
@@ -1325,34 +1326,21 @@ p {
         width: 100%;
     }
     
-    .section {
-        padding: 50px 0;
-    }
-    
     .section-title {
-        font-size: 1.75rem;
-        line-height: 1.3;
-    }
-    
-    .section-subtitle {
-        font-size: 0.85rem;
+        font-size: 1.6rem;
     }
     
     .section-description {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
     
     .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
     }
     
     .stat-number {
-        font-size: 2.5rem;
-    }
-    
-    .stat-label {
-        font-size: 0.9rem;
+        font-size: 2rem;
     }
     
     .features-grid {
@@ -1361,17 +1349,8 @@ p {
     }
     
     .feature-card {
-        padding: 30px 20px;
-    }
-    
-    .feature-icon {
-        width: 70px;
-        height: 70px;
-        font-size: 1.75rem;
-    }
-    
-    .feature-title {
-        font-size: 1.15rem;
+        padding: 25px 20px;
+        width: 100%;
     }
     
     .programs-grid {
@@ -1380,161 +1359,125 @@ p {
     }
     
     .courses-container {
+        padding: 0;
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .courses-scroll-wrapper {
         padding: 0 10px;
     }
     
+    .courses-grid {
+        gap: 15px;
+    }
+    
     .courses-grid .course-card {
-        flex: 0 0 calc(100% - 20px);
+        flex: 0 0 calc(100vw - 60px);
         width: calc(100vw - 60px);
-        max-width: 330px;
+        max-width: 100%;
+        min-width: 280px;
     }
     
     .scroll-btn {
-        width: 35px;
-        height: 35px;
-        font-size: 0.9rem;
+        display: none; /* Hide scroll buttons on mobile */
     }
     
-    .scroll-left {
-        left: -10px;
-    }
-    
-    .scroll-right {
-        right: -10px;
-    }
-    
-    .course-header {
-        padding: 25px;
-    }
-    
-    .course-icon {
-        font-size: 2.5rem;
-    }
-    
-    .course-title {
-        font-size: 1.3rem;
-    }
-    
-    .course-body {
-        padding: 25px;
-    }
-    
-    .about-image {
-        max-height: 350px;
+    .course-card {
+        width: 100%;
     }
     
     .tech-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        gap: 15px;
     }
     
     .tech-item {
         padding: 20px 15px;
     }
     
-    .tech-item img {
-        width: 50px;
-        height: 50px;
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
     }
     
     .contact-form-wrapper,
     .contact-info {
-        padding: 30px 20px;
+        padding: 25px 20px;
+        width: 100%;
     }
     
     .info-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+        flex-direction: row;
+        gap: 15px;
     }
     
-    .info-item i {
-        font-size: 1.25rem;
+    .footer {
+        width: 100%;
     }
     
     .footer-content {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 25px;
     }
     
     .newsletter-form {
         flex-direction: column;
+        gap: 10px;
     }
     
-    .newsletter-form input {
-        width: 100%;
-    }
-    
+    .newsletter-form input,
     .newsletter-form button {
         width: 100%;
     }
 }
 
-/* Mobile Small (481px - 575px) */
-@media (max-width: 575px) {
+/* Mobile Small (max-width: 480px) - EXTRA FIX */
+@media (max-width: 480px) {
     .container {
-        padding: 0 15px;
-    }
-    
-    h1 { font-size: 1.75rem; }
-    h2 { font-size: 1.5rem; }
-    h3 { font-size: 1.35rem; }
-    h4 { font-size: 1.2rem; }
-    h5 { font-size: 1.1rem; }
-    
-    .btn {
-        padding: 10px 25px;
-        font-size: 0.95rem;
-    }
-    
-    .btn-lg {
-        padding: 12px 30px;
-        font-size: 1rem;
-    }
-    
-    .navbar-brand {
-        font-size: 1.2rem;
+        padding: 0 12px;
     }
     
     .navbar-brand img {
-        width: 32px;
-        height: 32px;
+        width: 100px;
+        height: 50px;
     }
     
     .hero-section {
-        padding: 110px 0 50px;
+        padding: 100px 0 50px;
     }
     
     .hero-title {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
     }
     
     .hero-description {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
     }
     
     .section {
-        padding: 40px 0;
-    }
-    
-    .section-header {
-        margin-bottom: 40px;
+        padding: 35px 0;
     }
     
     .section-title {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
     
     .stats-grid {
-        gap: 15px;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
     }
     
     .stat-number {
-        font-size: 2rem;
+        font-size: 1.75rem;
+    }
+    
+    .stat-label {
+        font-size: 0.85rem;
     }
     
     .feature-card {
-        padding: 25px 15px;
+        padding: 20px 15px;
     }
     
     .feature-icon {
@@ -1543,239 +1486,23 @@ p {
         font-size: 1.5rem;
     }
     
+    .courses-grid .course-card {
+        flex: 0 0 calc(100vw - 50px);
+        width: calc(100vw - 50px);
+        min-width: 260px;
+    }
+    
     .course-header {
-        padding: 20px;
-    }
-    
-    .course-icon {
-        font-size: 2rem;
-    }
-    
-    .course-body {
-        padding: 20px;
-    }
-    
-    .course-features li {
-        font-size: 0.9rem;
-        padding: 6px 0;
-    }
-    
-    .contact-form-wrapper,
-    .contact-info {
         padding: 20px 15px;
     }
     
-    .form-group input,
-    .form-group textarea {
-        padding: 10px 12px;
-        font-size: 0.95rem;
-    }
-}
-
-/* Mobile Extra Small (320px - 480px) */
-@media (max-width: 480px) {
-    .container {
-        padding: 0 12px;
-    }
-    
-    h1 { font-size: 1.5rem; }
-    h2 { font-size: 1.35rem; }
-    h3 { font-size: 1.2rem; }
-    h4 { font-size: 1.1rem; }
-    
-    .navbar {
-        padding: 8px 0;
-    }
-    
-    .navbar-brand {
-        font-size: 1.1rem;
-        gap: 8px;
-    }
-    
-    .navbar-brand img {
-        width: 60px;
-        height: 40px;
-    }
-    
-    .nav-toggle span {
-        width: 22px;
-        height: 2.5px;
-    }
-    
-    .hero-section {
-        padding: 100px 0 40px;
-        background-position: 65% center;
-    }
-    
-    .hero-title {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 0.8rem;
-    }
-    
-    .hero-description {
-        font-size: 0.9rem;
-        line-height: 1.5;
-        margin-bottom: 1.5rem;
-    }
-    
-    .btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
-    
-    .btn-lg {
-        padding: 11px 25px;
-        font-size: 0.95rem;
-    }
-    
-    .section {
-        padding: 35px 0;
-    }
-    
-    .section-header {
-        margin-bottom: 35px;
-    }
-    
-    .section-title {
-        font-size: 1.4rem;
-        margin-bottom: 0.75rem;
-    }
-    
-    .section-subtitle {
-        font-size: 0.8rem;
-    }
-    
-    .section-description {
-        font-size: 0.9rem;
-        line-height: 1.6;
-    }
-    
-    .stats-section {
-        padding: 40px 0;
-    }
-    
-    .stats-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
-    }
-    
-    .stat-item {
-        padding: 15px 10px;
-    }
-    
-    .stat-number {
-        font-size: 1.75rem;
-        margin-bottom: 0.25rem;
-    }
-    
-    .stat-label {
-        font-size: 0.85rem;
-        line-height: 1.3;
-    }
-    
-    .features-grid,
-    .courses-grid {
-        gap: 15px;
-    }
-    
-    .feature-card {
-        padding: 20px 12px;
-    }
-    
-    .feature-icon {
-        width: 55px;
-        height: 55px;
-        font-size: 1.35rem;
-        margin-bottom: 15px;
-    }
-    
-    .feature-title {
-        font-size: 1rem;
-        margin-bottom: 0.75rem;
-    }
-    
-    .feature-text {
-        font-size: 0.9rem;
-        line-height: 1.6;
-    }
-    
-    .course-card {
-        border-radius: 0.5rem;
-    }
-    
-    .course-header {
-        padding: 18px 15px;
-    }
-    
-    .course-icon {
-        font-size: 1.75rem;
-        margin-bottom: 10px;
-    }
-    
-    .course-title {
-        font-size: 1.1rem;
-    }
-    
     .course-body {
-        padding: 18px 15px;
-    }
-    
-    .course-description {
-        font-size: 0.9rem;
-        margin-bottom: 15px;
-    }
-    
-    .course-features {
-        margin-bottom: 20px;
-    }
-    
-    .course-features li {
-        font-size: 0.85rem;
-        padding: 5px 0;
-        gap: 8px;
-    }
-    
-    .course-features i {
-        font-size: 1rem;
-    }
-    
-    .course-meta {
-        margin-bottom: 15px;
-        padding-top: 12px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-    
-    .course-duration {
-        font-size: 0.9rem;
-    }
-    
-    .course-badge {
-        padding: 4px 12px;
-        font-size: 0.8rem;
-    }
-    
-    .about-image {
-        max-height: 280px;
-    }
-    
-    .about-lead {
-        font-size: 1.05rem;
-    }
-    
-    .about-text p {
-        font-size: 0.9rem;
-        margin-bottom: 1rem;
+        padding: 20px 15px;
     }
     
     .tech-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+        gap: 12px;
     }
     
     .tech-item {
@@ -1785,148 +1512,21 @@ p {
     .tech-item img {
         width: 45px;
         height: 45px;
-        margin-bottom: 10px;
     }
     
-    .tech-item p {
-        font-size: 0.9rem;
-    }
-    
-    .contact-content {
-        gap: 25px;
-    }
-    
-    .contact-form-wrapper h4,
-    .contact-info h4 {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
-    }
-    
-    .form-group {
-        margin-bottom: 15px;
-    }
-    
-    .form-group label {
-        font-size: 0.9rem;
-        margin-bottom: 6px;
+    .contact-form-wrapper,
+    .contact-info {
+        padding: 20px 15px;
     }
     
     .form-group input,
     .form-group textarea {
-        padding: 10px;
-        font-size: 0.9rem;
-        border-radius: 0.5rem;
-    }
-    
-    .form-group textarea {
-        min-height: 100px;
-    }
-    
-    .info-item {
-        margin-bottom: 20px;
-    }
-    
-    .info-item i {
-        font-size: 1.1rem;
-        width: 35px;
-    }
-    
-    .info-item h5 {
-        font-size: 1rem;
-        margin-bottom: 3px;
-    }
-    
-    .info-item p {
-        font-size: 0.85rem;
-        line-height: 1.5;
-    }
-    
-    .footer {
-        padding: 40px 0 15px;
-    }
-    
-    .footer-content {
-        margin-bottom: 30px;
-        gap: 25px;
-    }
-    
-    .footer-section h5 {
-        font-size: 1.1rem;
-        margin-bottom: 15px;
-    }
-    
-    .footer-section p,
-    .footer-section ul li a {
-        font-size: 0.85rem;
-        line-height: 1.6;
-    }
-    
-    .footer-section ul li {
-        margin-bottom: 8px;
-    }
-    
-    .social-links {
-        gap: 12px;
-        margin-top: 15px;
-    }
-    
-    .social-links a {
-        width: 36px;
-        height: 36px;
-        font-size: 0.9rem;
-    }
-    
-    .newsletter-form input {
         padding: 10px 12px;
         font-size: 0.9rem;
     }
     
-    .newsletter-form button {
-        padding: 10px 15px;
-    }
-    
-    .footer-bottom {
-        padding-top: 20px;
-        margin-top: 30px;
-    }
-    
-    .footer-bottom p {
-        font-size: 0.85rem;
-    }
-}
-
-/* Mobile Very Small (below 360px) */
-@media (max-width: 359px) {
-    .container {
-        padding: 0 10px;
-    }
-    
-    .navbar-brand {
-        font-size: 1rem;
-    }
-    
-    .navbar-brand img {
-        width: 28px;
-        height: 28px;
-    }
-    
-    .hero-title {
-        font-size: 1.35rem;
-    }
-    
-    .hero-section {
-        background-position: 70% center;
-    }
-    
-    .section-title {
-        font-size: 1.25rem;
-    }
-    
-    .stat-number {
-        font-size: 1.5rem;
-    }
-    
-    .stat-label {
-        font-size: 0.8rem;
+    .info-item i {
+        width: 35px;
+        font-size: 1.2rem;
     }
 }

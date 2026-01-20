@@ -1,6 +1,6 @@
 /* ========================================
    FULL STACK DEVELOPMENT PAGE - CUSTOM CSS
-   No Bootstrap - Pure CSS with Animations
+   MOBILE RESPONSIVE FIXED - No Horizontal Scroll
 ======================================== */
 
 /* ========================================
@@ -20,7 +20,7 @@
 }
 
 /* ========================================
-   Reset & Base Styles
+   Reset & Base Styles - MOBILE FIX
 ======================================== */
 * {
     margin: 0;
@@ -30,6 +30,9 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
 }
 
 body {
@@ -39,6 +42,10 @@ body {
     color: var(--text-color);
     background-color: var(--white);
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
 }
 
 img {
@@ -86,6 +93,8 @@ p {
 
 .section {
     padding: 80px 0;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 .section-light {
@@ -164,15 +173,15 @@ p {
 }
 
 /* ========================================
-   Navigation
+   Navigation - FIXED FOR MOBILE
 ======================================== */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    width: 100%;
     background: var(--white);
-    /* padding: 20px 0; */
     z-index: 1000;
     transition: var(--transition);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -187,6 +196,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .navbar-brand {
@@ -199,10 +209,9 @@ p {
 }
 
 .navbar-brand img {
-        width: 150px;
+    width: 150px;
     height: 80px;
     object-fit: contain;
-
 }
 
 .nav-menu {
@@ -244,6 +253,7 @@ p {
     background: transparent;
     border: none;
     cursor: pointer;
+    padding: 5px;
 }
 
 .nav-toggle span {
@@ -251,6 +261,7 @@ p {
     height: 3px;
     background: var(--primary-color);
     transition: var(--transition);
+    display: block;
 }
 
 .nav-toggle.active span:nth-child(1) {
@@ -266,7 +277,7 @@ p {
 }
 
 /* ========================================
-   Hero Section
+   Hero Section - FIXED FOR MOBILE
 ======================================== */
 .hero-section {
     position: relative;
@@ -274,6 +285,7 @@ p {
     padding: 180px 0 100px;
     margin-top: 0px;
     overflow: hidden;
+    width: 100%;
     background: 
         linear-gradient(135deg, rgba(10, 37, 64, 0.9) 0%, rgba(13, 58, 92, 0.85) 100%),
         url('../Image/Fullstack1.webp') center center;
@@ -285,6 +297,7 @@ p {
     max-width: 900px;
     margin: 0 auto;
     text-align: center;
+    width: 100%;
 }
 
 .hero-subtitle {
@@ -331,6 +344,7 @@ p {
 .fact-item i {
     font-size: 2rem;
     color: var(--secondary-color);
+    flex-shrink: 0;
 }
 
 .fact-text {
@@ -358,6 +372,7 @@ p {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
+    width: 100%;
 }
 
 .feature-card {
@@ -413,6 +428,7 @@ p {
     gap: 30px;
     max-width: 900px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .tech-item {
@@ -504,6 +520,7 @@ p {
     font-weight: 700;
     color: var(--secondary-color);
     min-width: 40px;
+    flex-shrink: 0;
 }
 
 .accordion-title {
@@ -517,6 +534,7 @@ p {
     font-size: 1.2rem;
     color: var(--primary-color);
     transition: var(--transition);
+    flex-shrink: 0;
 }
 
 .accordion-item.active .accordion-icon {
@@ -543,6 +561,7 @@ p {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    width: 100%;
 }
 
 .project-card {
@@ -607,6 +626,8 @@ p {
 ======================================== */
 .cta-section {
     background: linear-gradient(135deg, var(--primary-color), #0D3A5C);
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .cta-card {
@@ -639,13 +660,16 @@ p {
     background: var(--dark-color);
     color: var(--white);
     padding: 60px 0 20px;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 40px;
     margin-bottom: 40px;
+    width: 100%;
 }
 
 .footer-section h5 {
@@ -677,6 +701,7 @@ p {
     display: flex;
     gap: 15px;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .social-links a {
@@ -700,6 +725,7 @@ p {
     display: flex;
     gap: 10px;
     margin-top: 15px;
+    width: 100%;
 }
 
 .newsletter-form input {
@@ -708,6 +734,7 @@ p {
     border: none;
     border-radius: var(--border-radius);
     font-family: inherit;
+    min-width: 0;
 }
 
 .newsletter-form button {
@@ -718,6 +745,7 @@ p {
     border-radius: var(--border-radius);
     cursor: pointer;
     transition: var(--transition);
+    flex-shrink: 0;
 }
 
 .newsletter-form button:hover {
@@ -821,11 +849,16 @@ p {
 }
 
 /* ========================================
-   Responsive Design
+   MOBILE RESPONSIVE - NO HORIZONTAL SCROLL
 ======================================== */
 
 /* Tablet (768px - 991px) */
 @media (max-width: 991px) {
+    .container {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+    
     .nav-toggle {
         display: flex;
     }
@@ -834,13 +867,13 @@ p {
         position: fixed;
         top: 80px;
         right: -100%;
-        width: 100%;
-        max-width: 320px;
+        width: 280px;
+        max-width: 80vw;
         height: calc(100vh - 80px);
         background: var(--white);
         flex-direction: column;
         align-items: flex-start;
-        padding: 30px;
+        padding: 30px 20px;
         box-shadow: var(--box-shadow-lg);
         transition: var(--transition);
         overflow-y: auto;
@@ -910,10 +943,53 @@ p {
     }
 }
 
-/* Mobile (max-width: 767px) */
+/* Mobile (max-width: 767px) - CRITICAL FIX */
 @media (max-width: 767px) {
+    * {
+        max-width: 100%;
+    }
+    
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 0 15px;
+        width: 100%;
+    }
+    
+    .section {
+        padding: 50px 0;
+        overflow-x: hidden;
+        width: 100%;
+    }
+    
+    .navbar {
+        padding: 10px 0;
+        width: 100%;
+    }
+    
+    .navbar .container {
+        padding: 0 15px;
+    }
+    
+    .navbar-brand img {
+        width: 120px;
+        height: 60px;
+    }
+
     .hero-section {
         padding: 120px 0 60px;
+        background-attachment: scroll;
+        width: 100%;
+    }
+
+    .hero-content {
+        padding: 0 15px;
+        width: 100%;
     }
 
     .hero-title {
@@ -930,10 +1006,7 @@ p {
 
     .fact-item {
         padding: 15px 20px;
-    }
-
-    .section {
-        padding: 50px 0;
+        width: 100%;
     }
 
     .section-title {
@@ -995,10 +1068,38 @@ p {
     .cta-content p {
         font-size: 1rem;
     }
+    
+    .footer {
+        width: 100%;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .newsletter-form input,
+    .newsletter-form button {
+        width: 100%;
+    }
 }
 
 /* Mobile Small (max-width: 480px) */
 @media (max-width: 480px) {
+    .container {
+        padding: 0 12px;
+    }
+    
+    .navbar-brand img {
+        width: 100px;
+        height: 50px;
+    }
+
     .hero-section {
         padding: 100px 0 50px;
         background-position: center center;
