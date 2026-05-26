@@ -1,5 +1,5 @@
-# CAMPUSZEN LEARNING SOLUTIONS - Robots.txt
-# Website: https://www.campuszen.com
+# SKILL VANTIX - Robots.txt
+# Website: https://www.skillvantix.com
 
 User-agent: *
 Allow: /
@@ -24,7 +24,7 @@ User-agent: Googlebot-Mobile
 Allow: /
 
 # Sitemap location
-Sitemap: https://www.campuszen.com/sitemap.xml
+Sitemap: https://www.skillvantix.com/sitemap.xml
 
 # Crawl delay (optional - prevents overwhelming server)
 Crawl-delay: 1
